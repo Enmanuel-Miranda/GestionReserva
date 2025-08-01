@@ -2,6 +2,7 @@ package org.ReservasRestaurante.presentation;
 
 import org.ReservasRestaurante.business.ReservaService;
 import org.ReservasRestaurante.data.ReservaRepository;
+import org.ReservasRestaurante.data.ReservaRepositoryJdbc;
 import org.ReservasRestaurante.model.Reserva;
 
 import java.time.LocalDateTime;
@@ -15,8 +16,8 @@ public class RestauranteVista {
     private final ReservaService reservaService;
     private final Scanner scanner;
 
-    public RestauranteVista() {
-        this.reservaService = new ReservaService(new ReservaRepository());
+    public RestauranteVista(ReservaService reservaService) {
+        this.reservaService = new ReservaService(new ReservaRepositoryJdbc());
         this.scanner = new Scanner(System.in);
     }
 
