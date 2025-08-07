@@ -9,6 +9,7 @@ import java.time.LocalDateTime;
 public class Reserva {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
+    @Column(name = "idReserva", columnDefinition = "varchar(36)")
     private String idReserva;
     @Column(name = "cliente", nullable = false)
     private String cliente;
@@ -24,6 +25,9 @@ public class Reserva {
         this.cantidadPersonas = cantidadPersonas;
         this.fechaHora = fechaHora;
         this.estado = true;
+    }
+
+    public Reserva() {
     }
 
     public String getIdReserva() { return idReserva; }

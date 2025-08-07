@@ -16,10 +16,18 @@ public class RestauranteVista {
     private final ReservaService reservaService;
     private final Scanner scanner;
 
+    /*
     public RestauranteVista(ReservaService reservaService) {
         this.reservaService = new ReservaService(new ReservaRepositoryJdbc());
         this.scanner = new Scanner(System.in);
     }
+    */
+
+    public RestauranteVista(ReservaService reservaService) {
+        this.reservaService = reservaService; // Usar el servicio que se pasa
+        this.scanner = new Scanner(System.in);
+    }
+
 
     public void iniciar() {
         int opcion;
